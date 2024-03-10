@@ -4,6 +4,7 @@ package com.websecurity.demo.jwt.Demo;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import lombok.RequiredArgsConstructor;
 
 @RestController
@@ -16,7 +17,4 @@ public class DemoController {
     {
         return "Welcome from secure endpoint";
     }
-
-
-
 }
