@@ -2,6 +2,7 @@ package com.websecurity.demo.jwt.Config;
 
 import com.websecurity.demo.jwt.User.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.authentication.AuthenticationProvider;
 import lombok.SneakyThrows;
 import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.context.annotation.Bean;
@@ -21,7 +22,8 @@ public class ApplicationConfig {
     private final UserRepository userRepository;
 
     @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception
+    {
         return config.getAuthenticationManager();
     }
 
@@ -44,4 +46,5 @@ public class ApplicationConfig {
         return username -> userRepository.findByUsername(username)
                 .orElseThrow(()-> new UsernameNotFoundException("User not fournd"));
     }
+
 }

@@ -26,7 +26,7 @@ public class AuthController {
     public ResponseEntity<AuthResponse> register(@RequestBody RegisterRequest request)
     {
         //return "Register from public endpoint";
-        return ReponseEntity.ok(authService.register(request));
+        return ResponseEntity.ok(authService.register(request));
     }
 
 }
